@@ -2,7 +2,7 @@ import axios from "axios";
 
 const getNonce = async (address) => {
   const nonce = axios
-    .get(`http://localhost:8080/auth/${address}/nonce`)
+    .get(`https://api.stagemeta.dev/auth/${address}/nonce`)
     .then((res) => res.data);
 
   return nonce;
@@ -10,7 +10,7 @@ const getNonce = async (address) => {
 
 const signature = async (address, signature) => {
   axios
-    .post(`http://localhost:8080/auth/${address}/signature`, {
+    .post(`https://api.stagemeta.dev/auth/${address}/signature`, {
       signature,
     })
     .then((res) => res.data);
